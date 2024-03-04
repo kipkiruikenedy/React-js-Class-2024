@@ -1,15 +1,16 @@
 // Home.js
 import React, { useState } from 'react';
-import BasicForm from '../froms/BasicForm';
-import "./Home.css"
+
+
+import Table from '../TableHandling/Table';
+
 
 function Home() {
 
 
   return (
     <div className='container'>
-      <BasicForm />
-  
+    <Table />
     </div>
   );
 }
