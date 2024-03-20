@@ -21,14 +21,13 @@ function MapMethodHandling() {
 
   return (
     <div className='container'>
+   
       
    {users.map(user=>(
 <>
    <div>{user.id}</div>
    <div>{user.name}</div>
 </>
-  
-
    ))}
 
     </div>
