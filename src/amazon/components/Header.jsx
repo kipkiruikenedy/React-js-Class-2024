@@ -6,7 +6,17 @@ import flag from "../../assets/images/us-glag.jpeg"
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+// Import useSelector hook from redux
+import { useSelector } from 'react-redux'; 
+
 function Header() {
+   // Get the cart items from Redux store
+   const cartItems = useSelector(state => state.cart.items);
+
+   // Calculate total number of items in the cart
+   const totalItemsInCart = cartItems.reduce((total, item) => total + item.quantity, 0);
+ 
+
 
 const users=0;
   return (
@@ -51,12 +61,6 @@ const users=0;
 
 
 
-
-
-
-
-
-
      {/* Right section */}
      <div className='bg-trasparent w-2/6 flex justify-evenly text-white'>
 
@@ -84,6 +88,7 @@ const users=0;
                 <ShoppingCartIcon className='text-lg'/>
             </div>
             <div>cart</div>
+            <p className='absolute text-red-500 font-bold -mt-1 ml-2 bg-red-400 text-white rounded-full'>{totalItemsInCart}</p>
         </div>
      </div>
 
